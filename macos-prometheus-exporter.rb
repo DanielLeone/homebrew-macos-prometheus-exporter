@@ -6,8 +6,10 @@ class MacosPrometheusExporter < Formula
   license "Apache-2.0"
 
   service do
-    run bin/"macos_prometheus_exporter"
+    run bin / "macos_prometheus_exporter"
     keep_alive true
+    log_path "/usr/local/var/log/node_exporter.log"
+    error_log_path "/usr/local/var/log/node_exporter.err.log"
   end
 
   def install
